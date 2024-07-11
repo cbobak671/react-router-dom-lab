@@ -9,6 +9,15 @@ import MailboxDetails from "./components/MailboxDetails";
 const App = () => {
   const [mailboxes, setMailboxes] = useState([]);
 
+  const addBox = (formData) => {
+    const newMailbox = {
+      _id: mailboxes.length + 1,
+      boxholder: formData.boxholder,
+      boxSize: formData.boxSize,
+    };
+    setMailboxes([...mailboxes, newMailbox]);
+  };
+
   return (
     <>
       <NavBar />
@@ -22,7 +31,10 @@ const App = () => {
           }
         ></Route>
         <Route path="/mailboxes" element={<MailboxList />}></Route>
-        <Route path="/new-mailbox" element={<MailboxForm />}></Route>
+        <Route
+          path="/new-mailbox"
+          element={<MailboxForm addBox={addBox} />}
+        ></Route>
       </Routes>
     </>
   );
