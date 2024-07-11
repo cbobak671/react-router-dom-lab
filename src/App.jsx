@@ -11,8 +11,8 @@ const App = () => {
 
   const addBox = (formData) => {
     const newMailbox = {
-      _id: mailboxes.length + 1,
-      boxholder: formData.boxholder,
+      _id: "Mailbox" + " " + mailboxes.length + 1,
+      boxHolder: formData.boxHolder,
       boxSize: formData.boxSize,
     };
     setMailboxes([...mailboxes, newMailbox]);
@@ -37,6 +37,10 @@ const App = () => {
         <Route
           path="/new-mailbox"
           element={<MailboxForm addBox={addBox} />}
+        ></Route>
+        <Route
+          path="/mailboxes/:mailboxId"
+          element={<MailboxDetails mailboxes={mailboxes} />}
         ></Route>
       </Routes>
     </>
