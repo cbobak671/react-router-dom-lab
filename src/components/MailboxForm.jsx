@@ -19,16 +19,31 @@ const MailboxForm = ({ addBox }) => {
     navigate("/mailboxes");
   };
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <section>
         <h1>Add Mailbox</h1>
       </section>
       <label htmlFor="boxholder">Boxholder: </label>
-      <input type="text" id="boxholder" value={formData.boxholder} />
+      <input
+        type="text"
+        id="boxholder"
+        value={formData.boxholder}
+        onChange={handleChange}
+      />
       <br />
       <label htmlFor="boxsize">Box Size: </label>
-      <select name="boxSize" id="boxSize" value={formData.boxSize}>
+      <select
+        name="boxSize"
+        id="boxSize"
+        value={formData.boxSize}
+        onChange={handleChange}
+      >
         <option value="Small">Small</option>
         <option value="Medium">Medium</option>
         <option value="Large">Large</option>
