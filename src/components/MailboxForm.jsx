@@ -29,7 +29,7 @@ const MailboxForm = ({ addBox }) => {
       <section>
         <h1>Add Mailbox</h1>
       </section>
-      <label htmlFor="boxholder">Boxholder: </label>
+      <label htmlFor="boxHolder">Enter a Boxholder: </label>
       <input
         type="text"
         name="boxHolder"
@@ -38,7 +38,7 @@ const MailboxForm = ({ addBox }) => {
         onChange={handleChange}
       />
       <br />
-      <label htmlFor="boxsize">Box Size: </label>
+      <label htmlFor="boxSize">Select a Box Size: </label>
       <select
         name="boxSize"
         id="boxSize"
