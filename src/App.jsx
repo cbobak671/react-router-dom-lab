@@ -1,5 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
+import NavBar from "./components/NavBar"
+import MailboxForm from "./components/MailboxForm"
+import MailboxList from "./components/MailboxList"
+import MailboxDetails from "./components/MailboxDetails"
 
 const App = () => {
   return (
